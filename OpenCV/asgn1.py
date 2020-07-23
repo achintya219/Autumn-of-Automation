@@ -1,7 +1,7 @@
 import cv2 as cv
 
 
-nemo = cv.imread("/home/achintya/Pictures/nemo3.jpg")
+nemo = cv.imread("/home/achintya/Desktop/Autumn-of-Automation/OpenCV/nemo3.jpg")
 
 cv.imshow("Display Window", nemo)
 cv.waitKey(0)
