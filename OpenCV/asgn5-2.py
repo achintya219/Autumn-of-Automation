@@ -43,10 +43,8 @@ while(True):
 
 		cv.imshow("homography", homography)
 	else:
-		cv.imshow("homography", grayframe)
+		cv.imshow("homography", frame)
 	
-	cv.imshow("Image", img)
-	cv.imshow('Frame', frame)
 	if cv.waitKey(40) & 0xFF == ord('q'):
 		break
 
