@@ -23,14 +23,16 @@ def callback(data):
 	cosy_cosp = 1 - 2 * (val.z**2 + val.w**2)
 	rpy.yaw = np.arctan2(siny_cosp, cosy_cosp)
 
+	while not rospy.is_shutdown():
+		pub = rospy.Publisher('topic2', rollpitchyaw, queue_size=10)
+		pub.Publish(rpy)
+		rate.sleep()
 
-	pub = rospy.Publisher('topic2', rollpitchyaw, queue_size=10)
-		
-	pub.Publish(rpy)
 	
 
 
 rospy.init_node('Converter', anonymous=True)
-	
+rate = rospy.Rate(10)
 rospy.Subscriber('topic1', quat, callback)
 
+rsopy.spin()
