@@ -19,7 +19,7 @@ data_dir = "/content/drive/My Drive/Intermediate_Assignment_Dataset"
 data_set = []
 
 for val in os.listdir(data_dir):
-    if val[0] == 'N':
+    if val[0:2] == 'No':
         num = 0
     else: 
         num = 1
